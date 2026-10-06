@@ -11,8 +11,8 @@ using namespace std::chrono;
 using namespace std;
 
 // Adaptive configuration
-const unsigned long THRESHOLD_1 = 35000;
-const unsigned long THRESHOLD_2 = 4000000;
+const unsigned long THRESHOLD_1 = 25000;
+const unsigned long THRESHOLD_2 = 2500000;
 
 const int OPENMP_THREADS = 12;
 const int TASK_CUTOFF = 10000;
@@ -259,9 +259,8 @@ int main()
 
         if (err < 0)
         {
-            cout << "Couldn't create OpenCL buffer."
-                 << endl;
-
+            cout << "Couldn't create OpenCL buffer." << endl;
+            cout << "OpenCL error code: " << err << endl;
             free(array);
 
             return 1;
